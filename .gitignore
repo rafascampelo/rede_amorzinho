@@ -1,0 +1,37 @@
+# Ambiente virtual
+venv/
+ENV/
+env/
+
+# Arquivos de cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Arquivos de log
+*.log
+
+# Configurações de IDEs
+.vscode/
+.idea/
+*.swp
+
+# Banco de dados local ou arquivos sensíveis
+*.db
+*.sqlite3
+*.env
+
+# Pasta de dependências do Node.js
+node_modules/
+
+# Arquivos gerados pelo Tailwind
+static/tailwind.css
+static/tailwind.css.map
+
+# Pastas de build (caso use futuramente)
+dist/
+build/
+
+# Outros
+.DS_Store
+Thumbs.db
