@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amorzinho ! </title>
+    <title> MVP </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 
 </head>
 <body class="flex flex-col items-center justify-center h-screen bg-pink-100">
-    <h1 class="text-3xl font-bold mb-6 text-pink-800">Bem-vindos ao Amorzinho 💖</h1>
+    <h1 class="text-3xl font-bold mb-6 text-pink-800">Bem-vindos ao Bate-papo</h1>
     <div class="space-x-4">
       <a href="{{ url_for('cadastro') }}" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
         Cadastrar
       </a>
-      <a href="{{ url_for('login') }}" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded">
+      <a href="{{ url_for('login') }}" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">
         Login
       </a>
     </div>
