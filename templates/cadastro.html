@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Cadastro</title>
-  <link href="/static/css/output.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro do Casal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 </head>
-<body class="bg-pink-100 flex items-center justify-center min-h-screen">
-  <form action="/cadastro" method="POST" class="bg-white p-6 rounded-lg shadow-md w-80">
-    <h2 class="text-xl font-bold mb-4 text-center">Crie sua conta</h2>
-    <input type="text" name="nome" placeholder="Nome" required class="w-full p-2 mb-2 border rounded">
-    <input type="email" name="email" placeholder="Email" required class="w-full p-2 mb-2 border rounded">
-    <input type="password" name="senha" placeholder="Senha" required class="w-full p-2 mb-4 border rounded">
-    <button type="submit" class="bg-pink-500 text-white w-full py-2 rounded hover:bg-pink-600">Cadastrar</button>
+<body class="bg-blue-50 flex items-center justify-center min-h-screen">
+
+  <form method="POST" action="/cadastro" class="bg-white p-8 rounded-2xl shadow-md w-full max-w-xl space-y-6">
+    <h2 class="text-2xl font-bold text-center text-blue-700">Cadastro do Casal 💌</h2>
+
+    <!-- Nome do casal -->
+    <div>
+      <label class="block text-blue-700 font-medium mb-1">Nome do casal / conversa</label>
+      <input type="text" name="nome_casal" required class="w-full border border-blue-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Parceiro 1 -->
+      <div>
+        <h3 class="text-lg font-semibold text-blue-600 mb-2">Parceiro 1</h3>
+        <input type="text" name="nome1" placeholder="Nome" required class="mb-2 w-full border p-2 rounded-md" />
+        <input type="email" name="email1" placeholder="Email" required class="mb-2 w-full border p-2 rounded-md" />
+        <input type="password" name="senha1" placeholder="Senha" required class="w-full border p-2 rounded-md" />
+      </div>
+
+      <!-- Parceiro 2 -->
+      <div>
+        <h3 class="text-lg font-semibold text-blue-600 mb-2">Parceiro 2</h3>
+        <input type="text" name="nome2" placeholder="Nome" required class="mb-2 w-full border p-2 rounded-md" />
+        <input type="email" name="email2" placeholder="Email" required class="mb-2 w-full border p-2 rounded-md" />
+        <input type="password" name="senha2" placeholder="Senha" required class="w-full border p-2 rounded-md" />
+      </div>
+    </div>
+
+    <!-- Botão -->
+    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all">
+      Cadastrar casal
+    </button>
+
+    <p class="text-center text-sm text-gray-500 mt-2">
+      Já tem uma conta? <a href="/login" class="text-blue-600 underline">Fazer login</a>
+    </p>
   </form>
+
 </body>
 </html>
