@@ -1,16 +1,23 @@
+
+import pymysql
 from flask import Flask, render_template, request, redirect, session, url_for
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
+from dotenv import load_dotenv
+
+pymysql.install_as_MySQLdb()
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+load_dotenv()
 
-# Configuração do banco de dados MySQL
+app.secret_key = os.getenv("SECRET_KEY")
+
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_USER'] = 'root'  # ou 'rafac', dependendo do que você criou
 app.config['MYSQL_PASSWORD'] = '0705'
 app.config['MYSQL_DB'] = 'amorzinho_rede'
+
 
 mysql = MySQL(app)
 
@@ -118,5 +125,5 @@ def conversa():
     return render_template('conversa.html', mensagens=mensagens, nome_casal=nome_casal)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
